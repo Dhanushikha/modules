@@ -1,1 +1,0 @@
-// Java HTTP client placeholder

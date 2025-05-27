@@ -1,1 +1,0 @@
-// Virtual threads (Java 21) placeholder

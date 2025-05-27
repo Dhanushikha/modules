@@ -1,1 +1,0 @@
-// Bytecode inspection using javap placeholder
