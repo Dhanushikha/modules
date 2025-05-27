@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+form, #events {
+  margin-top: 20px;
+}
+
+.event-card {
+  background: #f2f2f2;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+}
+
+#loading {
+  display: none;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "bootstrap5-project",
+  "version": "1.0.0",
+  "description": "Bootstrap 5 project setup using npm",
+  "main": "npm-bootstrap.html",
+  "scripts": {},
+  "dependencies": {
+    "bootstrap": "^5.3.0"
+  }
+}

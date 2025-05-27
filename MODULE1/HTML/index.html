@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Community Event Portal</title>
+  <style>
+    /* Internal CSS */
+    #welcomeBanner {
+      background-color: lightblue;
+      padding: 20px;
+      text-align: center;
+    }
+    .highlight {
+      font-weight: bold;
+      color: green;
+    }
+    table img {
+      border: 2px solid black;
+      width: 150px;
+      height: 100px;
+    }
+    form {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a> |
+    <a href="#events">Events</a> |
+    <a href="#contact">Contact</a> |
+    <a href="help.html" target="_blank">Help</a>
+  </nav>
+
+  <!-- Main -->
+  <div id="welcomeBanner">
+    <h1>Welcome to the Local Event Portal</h1>
+    <p class="highlight">Don't miss out on this month's events! <span style="color: red; font-weight: bold;">Special Offer!</span></p>
+  </div>
+
+  <!-- Image Gallery -->
+  <section id="events">
+    <h2>Past Events</h2>
+    <table>
+      <caption>Community Event Highlights</caption>
+      <tr>
+        <td><img src="event1.jpg" alt="Event 1" title="Community Gathering"></td>
+        <td><img src="event2.jpg" alt="Event 2" title="Music Festival"></td>
+        <td><img src="event3.jpg" alt="Event 3" title="Food Fair"></td>
+      </tr>
+      <tr>
+        <td><img src="event4.jpg" alt="Event 4" title="Art Show"></td>
+        <td><img src="event5.jpg" alt="Event 5" title="Tech Meetup"></td>
+        <td><img src="event6.jpg" alt="Event 6" title="Cleanup Drive"></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Event Registration Form -->
+  <section id="registration">
+    <h2>Register for an Event</h2>
+    <form onsubmit="showConfirmation(event)">
+      <label>Name: <input type="text" name="name" placeholder="Enter your name" required autofocus></label><br><br>
+      <label>Email: <input type="email" name="email" placeholder="Enter your email" required></label><br><br>
+      <label>Date: <input type="date" name="date" required></label><br><br>
+      <label>Event Type:
+        <select id="eventType" name="eventType" onchange="storeEventType(); showFee()">
+          <option value="music">Music</option>
+          <option value="art">Art</option>
+          <option value="tech">Tech</option>
+        </select>
+      </label>
+      <p id="fee"></p>
+      <br>
+      <label>Phone: <input type="text" id="phone" onblur="validatePhone()"></label><br><br>
+      <label>Message:<br>
+        <textarea id="feedback" rows="4" cols="30" onkeyup="countChars()"></textarea>
+      </label>
+      <p>Character Count: <span id="charCount">0</span></p>
+      <br>
+      <button type="submit" onclick="alert('Form Submitted!')">Submit</button>
+      <output id="confirmation"></output>
+    </form>
+    <button onclick="clearPreferences()">Clear Preferences</button>
+  </section>
+
+  <!-- Video Section -->
+  <section id="video">
+    <h2>Watch Our Promo Video</h2>
+    <video width="320" height="240" controls oncanplay="document.getElementById('videoMsg').textContent='Video ready to play'">
+      <source src="promo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p id="videoMsg"></p>
+  </section>
+
+  <!-- Geolocation -->
+  <section>
+    <h2>Find Nearby Events</h2>
+    <button onclick="getLocation()">Find Nearby Events</button>
+    <p id="location"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Contact us at community@portal.com</p>
+  </footer>
+
+  <script>
+    function validatePhone() {
+      const phone = document.getElementById('phone').value;
+      if (!/^\d{10}$/.test(phone)) alert("Invalid phone number. Must be 10 digits.");
+    }
+
+    function storeEventType() {
+      const type = document.getElementById('eventType').value;
+      localStorage.setItem("eventType", type);
+    }
+
+    function showFee() {
+      const type = document.getElementById('eventType').value;
+      const fees = { music: '$10', art: '$15', tech: '$20' };
+      document.getElementById('fee').textContent = 'Fee: ' + fees[type];
+    }
+
+    function countChars() {
+      const text = document.getElementById('feedback').value;
+      document.getElementById('charCount').textContent = text.length;
+    }
+
+    function getLocation() {
+      const output = document.getElementById('location');
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          pos => output.textContent = `Latitude: ${pos.coords.latitude}, Longitude: ${pos.coords.longitude}`,
+          err => output.textContent = "Error: " + err.message,
+          { enableHighAccuracy: true, timeout: 10000 }
+        );
+      } else {
+        output.textContent = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      alert("Preferences Cleared");
+    }
+
+    function showConfirmation(event) {
+      event.preventDefault();
+      document.getElementById('confirmation').textContent = "Thanks for registering!";
+    }
+
+    window.onload = function () {
+      const savedType = localStorage.getItem("eventType");
+      if (savedType) {
+        document.getElementById("eventType").value = savedType;
+        showFee();
+      }
+    }
+
+    window.onbeforeunload = function () {
+      return "Are you sure you want to leave? Your form data may not be saved.";
+    }
+  </script>
+
+</body>
+</html>

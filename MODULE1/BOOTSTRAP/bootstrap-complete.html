@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap 5 Complete Example</title>
+  <!-- Bootstrap CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      padding: 2rem;
+      background: #f0f2f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .sidebar {
+      background-color: #f8f9fa;
+      min-height: 200px;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .sidebar:hover {
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .fixed-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #212529;
+      color: white;
+      text-align: center;
+      padding: 0.5rem 0;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .badge-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    button.btn {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button.btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    }
+    nav.d-flex a {
+      transition: color 0.3s ease;
+    }
+    nav.d-flex a:hover {
+      color: #0d6efd;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="mb-4">Bootstrap 5 Complete Example</h1>
+
+    <!-- Buttons with contextual classes -->
+    <div class="mb-4">
+      <button class="btn btn-primary me-1" type="button">Primary</button>
+      <button class="btn btn-secondary me-1" type="button">Secondary</button>
+      <button class="btn btn-success me-1" type="button">Success</button>
+      <button class="btn btn-danger me-1" type="button">Danger</button>
+      <button class="btn btn-warning me-1" type="button">Warning</button>
+      <button class="btn btn-info me-1" type="button">Info</button>
+      <button class="btn btn-light me-1" type="button">Light</button>
+      <button class="btn btn-dark me-1" type="button">Dark</button>
+      <button class="btn btn-outline-primary" type="button">Outline Primary</button>
+    </div>
+
+    <!-- Responsive grid layout -->
+    <div class="row mb-4">
+      <div class="col-12 col-sm-6 col-lg-4 bg-primary text-white p-3 mb-2">Column 1</div>
+      <div class="col-12 col-sm-6 col-lg-4 bg-secondary text-white p-3 mb-2">Column 2</div>
+      <div class="col-12 col-sm-6 col-lg-4 bg-success text-white p-3 mb-2">Column 3</div>
+    </div>
+
+    <!-- Two-column layout with sidebar -->
+    <div class="row mb-4">
+      <div class="col-md-3 sidebar p-3">Sidebar (col-md-3)</div>
+      <div class="col-md-9 p-3 border">Content Area (col-md-9)</div>
+    </div>
+
+    <!-- Four-column equal width -->
+    <div class="row mb-4">
+      <div class="col-sm-3 bg-primary text-white p-3">Col 1</div>
+      <div class="col-sm-3 bg-secondary text-white p-3">Col 2</div>
+      <div class="col-sm-3 bg-success text-white p-3">Col 3</div>
+      <div class="col-sm-3 bg-danger text-white p-3">Col 4</div>
+    </div>
+
+    <!-- Center content inside a row -->
+    <div class="d-flex justify-content-center align-items-center bg-light mb-4" style="height: 100px;">
+      <div class="bg-primary text-white p-3">Centered Content</div>
+    </div>
+
+    <!-- Reorder columns on different screen sizes -->
+    <div class="row mb-4">
+      <div class="col-md-6 order-md-2 bg-info text-white p-3">Second on md and up</div>
+      <div class="col-md-6 order-md-1 bg-warning text-dark p-3">First on md and up</div>
+    </div>
+
+    <!-- Responsive navbar -->
+    <nav class="d-flex flex-column flex-md-row bg-light p-3 mb-4">
+      <a href="#" class="p-2">Logo</a>
+      <a href="#" class="p-2">Home</a>
+      <a href="#" class="p-2">About</a>
+      <a href="#" class="p-2">Contact</a>
+    </nav>
+
+    <!-- Card layout with justify-content-between and align-items-center -->
+    <div class="card d-flex flex-row justify-content-between align-items-center p-3 mb-4" style="max-width: 500px;">
+      <div>Card Content</div>
+      <button class="btn btn-primary">Action</button>
+    </div>
+
+    <!-- Typography utilities -->
+    <h1 class="display-1">Display 1</h1>
+    <p class="lead">Lead paragraph text.</p>
+    <p class="text-muted">Muted text.</p>
+    <p class="fw-bold mb-4">Bold text.</p>
+
+    <!-- Text transformation utilities -->
+    <p class="text-uppercase">Uppercase text.</p>
+    <p class="text-lowercase">Lowercase text.</p>
+    <p class="text-capitalize mb-4">Capitalize text.</p>
+
+    <!-- Registration form -->
+    <form class="mb-4" onsubmit="event.preventDefault(); alert('Registration form submitted!');">
+      <div class="mb-3">
+        <label for="regName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="regName" placeholder="Enter your name" required />
+      </div>
+      <div class="mb-3">
+        <label for="regEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="regEmail" placeholder="Enter your email" required />
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="regCheck" required />
+        <label class="form-check-label" for="regCheck">Accept Terms</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+
+    <!-- Login form with form-floating -->
+    <form class="mb-4" onsubmit="event.preventDefault(); alert('Login form submitted!');">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required />
+        <label for="loginEmail">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="loginPassword" placeholder="Password" required />
+        <label for="loginPassword">Password</label>
+      </div>
+      <button type="submit" class="btn btn-success">Login</button>
+    </form>
+
+    <!-- Button groups and toggle buttons -->
+    <div class="btn-group mb-4" role="group" aria-label="Basic example">
+      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" />
+      <label class="btn btn-outline-primary" for="btncheck1">Toggle 1</label>
+
+      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" />
+      <label class="btn btn-outline-primary" for="btncheck2">Toggle 2</label>
+
+      <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" />
+      <label class="btn btn-outline-primary" for="btncheck3">Toggle 3</label>
+    </div>
+
+    <!-- Responsive navbar with logo, links, and search form -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Nav tabs and pills -->
+    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+      </li>
+    </ul>
+    <div class="tab-content mb-4" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Home content...</div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Profile content...</div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact content...</div>
+    </div>
+
+    <!-- Profile card -->
+    <div class="card mb-4" style="width: 18rem;">
+      <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="Profile Image" />
+      <div class="card-body">
+        <h5 class="card-title">Profile Name</h5>
+        <p class="card-text">This is a profile card using Bootstrap card classes.</p>
+      </div>
+    </div>
+
+    <!-- Media object layout -->
+    <div class="d-flex align-items-start mb-4">
+      <img src="https://via.placeholder.com/64" class="me-3" alt="Media Image" />
+      <div>
+        <h5>Media Heading</h5>
+        <p>This is a media object layout with an image aligned to the left of the content.</p>
+      </div>
+    </div>
+
+    <!-- Spacing utilities -->
+    <div class="m-3 p-2 bg-light border mb-2">Margin m-3 and Padding p-2 applied</div>
+    <div class="mt-4 py-5 bg-secondary text-white mb-4">Margin top mt-4 and Padding vertical py-5 applied</div>
+
+    <!-- Pricing section with spacing -->
+    <div class="d-flex justify-content-around p-4 bg-light mb-4">
+      <div class="border p-3 mx-2" style="width: 150px;">
+        <h3>Basic</h3>
+        <p>$10/month</p>
+      </div>
+      <div class="border p-3 mx-2" style="width: 150px;">
+        <h3>Pro</h3>
+        <p>$20/month</p>
+      </div>
+      <div class="border p-3 mx-2" style="width: 150px;">
+        <h3>Enterprise</h3>
+        <p>$50/month</p>
+      </div>
+    </div>
+
+    <!-- Dashboard with contextual backgrounds and text colors -->
+    <div class="p-3 bg-primary text-white mb-2">Primary background</div>
+    <div class="p-3 bg-warning text-dark mb-2">Warning background</div>
+    <div class="p-3 bg-success text-white mb-4">Success background</div>
+
+    <!-- Background gradient with dark and white text -->
+    <div class="p-3 bg-gradient bg-dark text-white mb-4">Dark gradient background with white text</div>
+
+    <!-- Display and visibility utilities -->
+    <div class="d-none d-md-block bg-info text-white p-3 mb-2">Visible on md and larger</div>
+    <div class="d-lg-flex bg-warning p-3 mb-4">Flex display on lg and larger</div>
+
+    <!-- Responsive sidebar visible on tablets and above -->
+    <div class="d-none d-sm-block bg-light border p-3 mb-4" style="width: 200px;">
+      Responsive Sidebar (visible on sm and larger)
+    </div>
+
+    <!-- Borders and rounded corners on image -->
+    <img src="https://via.placeholder.com/150" class="border border-primary border-3 rounded-circle mb-4" alt="Rounded Image" />
+
+    <!-- Shadows and rounded-pill in card -->
+    <div class="card shadow shadow-lg rounded-pill p-3 mb-4" style="max-width: 300px;">
+      <div class="card-body">
+        <h5 class="card-title">Shadow Card</h5>
+        <p class="card-text">This card uses shadow-lg and rounded-pill classes.</p>
+      </div>
+    </div>
+
+    <!-- Overlay badge on image -->
+    <div class="position-relative d-inline-block mb-4">
+      <img src="https://via.placeholder.com/200" alt="Image" />
+      <span class="badge bg-danger rounded-pill badge-overlay">99+</span>
+    </div>
+
+    <!-- Bootstrap Icons in footer -->
+    <footer class="mb-4">
+      <a href="#" class="me-3 text-decoration-none text-dark"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="me-3 text-decoration-none text-dark"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="me-3 text-decoration-none text-dark"><i class="bi bi-instagram"></i></a>
+    </footer>
+
+    <!-- Icon-only buttons -->
+    <button class="btn btn-primary me-2"><i class="bi bi-heart"></i></button>
+    <button class="btn btn-secondary me-2"><i class="bi bi-star"></i></button>
+    <button class="btn btn-success"><i class="bi bi-check"></i></button>
+
+    <!-- Modal popup triggered by button -->
+    <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Launch Modal
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            This is a Bootstrap modal popup.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible accordion -->
+    <div class="accordion mt-4" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Accordion Item #1
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            This is the first item's accordion body.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Accordion Item #2
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            This is the second item's accordion body.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sass customization note -->
+    <div class="mt-4">
+      <h5>Bootstrap 5 Sass Customization</h5>
+      <p>
+        To customize Bootstrap 5 with Sass, set up a project using npm, modify the <code>_variables.scss</code> file to change primary colors and border radius, then recompile Bootstrap.
+      </p>
+      <pre><code>// Example _variables.scss customization
+$primary: #ff5733;
+$border-radius: 1rem;
+</code></pre>
+      <p>After customization, run <code>npm run build-css</code> or equivalent to compile the Sass files.</p>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS and Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Enable tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  </script>
+</body>
+</html>

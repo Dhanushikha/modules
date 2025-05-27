@@ -1,0 +1,108 @@
+/* Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  background: #fafafa url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  color: #fafafa; /* Almost invisible text */
+}
+
+/* Header Styles */
+#mainHeader {
+  background-color: #444;
+  color: #fafafa;
+  padding: 10px;
+}
+
+/* Event Card Styles */
+.eventCard {
+  border: 1px solid #ccc;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #ffffff99;
+  width: 60%;
+  color: #fafafa;
+}
+
+/* Description */
+.description {
+  font-size: 16px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+/* Link Styles */
+a:link, a:visited, a:hover, a:active {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+/* Nav Styles */
+.nav {
+  list-style-type: none;
+  margin: 20px;
+  padding: 0;
+}
+.nav li {
+  margin: 10px 0;
+}
+
+/* Table Styles */
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  color: #fafafa;
+}
+tr:nth-child(even) {
+  background-color: #ffffff66;
+}
+
+/* Form Styles */
+.highlight:focus {
+  outline: 2px solid #007BFF;
+}
+
+/* News Section */
+.news-section {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  margin: 20px auto;
+  width: 80%;
+  color: #fafafa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    display: block;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .eventCard {
+    margin: 10px;
+    padding: 10px;
+    width: 90%;
+  }
+
+  .news-section {
+    column-count: 1;
+  }
+}
